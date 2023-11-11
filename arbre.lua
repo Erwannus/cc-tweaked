@@ -40,5 +40,18 @@ while true do
         timber()
         plante()
         move.move({"t_r", "m_f", "m_f", "m_f", "m_f", "m_f", "m_f", "t_l"}) 
-        end
+    end
+    turtle.turnRight()
+    turtle.select(1)
+    if turtle.getItemCount(1) < 64 then
+        turtle.suck(64 - turtle.getItemCount(1))
+    end
+    turtle.turnRight()
+    for i = 2, 16 do
+        turtle.select(i)
+        turtle.drop()
+    end
+
+    turtle.turnLeft()
+    turtle.turnLeft()
 end
